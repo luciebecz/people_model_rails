@@ -1,0 +1,20 @@
+<h1>All People<hr /></h1>
+
+<% if @persons.any? %>
+
+  <% @persons.each do |person| %>
+    <div>
+      <%= link_to person.info, person_path(person) %>
+    </div>
+  <% end %>
+
+  <% else %>
+    <h3>No People Found, Please Create a Person</h3>
+  <% end %>
+
+<br />
+
+<hr />
+
+<%= link_to 'Create A New Person', new_person_path %>
+
